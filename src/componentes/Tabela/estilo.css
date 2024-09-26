@@ -24,14 +24,15 @@
     margin-bottom: 20px;
   }
   
-  table {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #ffffff; /* White background for the table */
-    border-radius: 8px; /* Rounded corners for the table */
-    overflow: hidden; /* Ensure rounded corners show */
-  }
+    background-color: #ffffff; /* Fundo branco para a tabela */
+    border-radius: 8px; /* Cantos arredondados para a tabela */
+    overflow: hidden; /* Garante que os cantos arredondados sejam visíveis */
+    border: 2px 2px solid black; /* Borda preta para a tabela */
+}
   
   th, td {
     border: 1px solid #ddd;

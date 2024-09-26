@@ -36,10 +36,12 @@
     width: 300px; /* Default width for larger screens */
     max-width: 100%; /* Ensure cards do not exceed container width */
     transition: transform 0.3s;
+    border: 1px solid black;
 }
 
 .driver-card:hover {
     transform: translateY(-5px);
+    border: 2px solid black;
 }
 
 .driver-card h3 {
