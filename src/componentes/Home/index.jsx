@@ -1,5 +1,5 @@
 import React from 'react';
-import './estilo.css'; // Import your CSS
+import './estilo.css'; 
 
 const HomePage = () => {
   return (

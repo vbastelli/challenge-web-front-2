@@ -1,9 +1,8 @@
-/* Background and page styling */
 .login-page {
-  height: 100vh; /* Use full viewport height */
+  height: 100vh; 
   display: flex;
-  flex-direction: column; /* Stack header, login box, and footer vertically */
-  justify-content: center; /* Center content vertically */
+  flex-direction: column; 
+  justify-content: center; 
   align-items: center;
   background: linear-gradient(to top right, #333399, #ff6600);
   background-size: cover;
@@ -32,7 +31,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 400px;
-  max-width: 90%; /* Allow box to be responsive on smaller screens */
+  max-width: 90%;
 }
 
 h2 {
@@ -118,33 +117,32 @@ input:focus {
   text-decoration: underline;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 600px) {
   .login-page {
-    height: 700px; /* Allow height to adjust based on content */
-    padding: 20px; /* Add padding around the page */
+    height: 700px; 
+    padding: 20px;
   }
 
   .login-box {
-    padding: 20px; /* Less padding on smaller screens */
-    width: 90%; /* Full width for smaller devices */
-    margin: 20px 0; /* Add some margin to separate from header and footer */
+    padding: 20px; 
+    width: 90%;
+    margin: 20px 0; 
   }
 
   h2 {
-    font-size: 1.5em; /* Smaller heading */
+    font-size: 1.5em; 
   }
 
   input {
-    font-size: 18px; /* Adjust input font size */
-    padding: 8px; /* Less padding for inputs */
+    font-size: 18px; 
+    padding: 8px;
   }
 
   .login-btn {
-    font-size: 20px; /* Smaller button text */
+    font-size: 20px;
   }
 
   .register-link {
-    font-size: 18px; /* Smaller register link text */
+    font-size: 18px;
   }
 }

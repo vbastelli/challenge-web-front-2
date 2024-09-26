@@ -7,7 +7,7 @@ const Tabela = () => {
   useEffect(() => {
     const fetchStandings = async () => {
       try {
-        const response = await fetch('/tabela.json'); // Adjust path if necessary
+        const response = await fetch('/tabela.json'); 
         const data = await response.json();
         setStandings(data.standings);
       } catch (error) {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './estilo.css'; // Import your styles
+import './estilo.css';
 
 const Login = () => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -7,7 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault(); 
     if (username && password) {
       if (isRegistering) {
         // Save username and password to SessionStorage

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './estilo.css'; // Importando o CSS
+import './estilo.css';
 
 const perguntas = [
     "Quem é o atual campeão da Fórmula E?",
@@ -72,7 +72,6 @@ const Quiz = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [isCorrect, setIsCorrect] = useState(null);
     
-    // Função para sortear 5 perguntas aleatórias
     const getRandomQuestions = () => {
         const shuffledQuestions = perguntas
             .map((question, index) => ({ question, index }))
@@ -81,7 +80,6 @@ const Quiz = () => {
         return shuffledQuestions.slice(0, 5).map(item => item.index);
     };
 
-    // Sorteia as perguntas ao inicializar
     const [selectedQuestions] = useState(getRandomQuestions());
 
     const handleAnswerOptionClick = (option) => {
@@ -129,7 +127,7 @@ const Quiz = () => {
                                         key={option}
                                         className={buttonClass}
                                         onClick={() => handleAnswerOptionClick(option)}
-                                        disabled={selectedOption !== null} // Desabilita botões após uma seleção
+                                        disabled={selectedOption !== null} 
                                     >
                                         {option}
                                     </button>

@@ -13,7 +13,7 @@
 }
 
 .footer-section {
-    flex: 1 1 200px; /* Flex-grow and shrink */
+    flex: 1 1 200px; 
     margin: 20px;
     text-align: center;
 }
@@ -50,13 +50,13 @@
 
 .footer-section.social-media {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center the icons */
+    flex-direction: column;
+    align-items: center;
 }
 
 .social-icons {
     display: flex;
-    justify-content: center; /* Center the icons */
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .social-icons a:hover {
-    color: #1e90ff; /* Change color on hover */
+    color: #1e90ff;
 }
 
 .footer-bottom {
@@ -80,41 +80,41 @@
 .footer-bottom p{
     font-size: 1.35rem;
 }
-/* Media query for mobile responsiveness */
+
 @media (max-width: 768px) {
     
     .footer {
-        padding: 10px; /* Reduce padding for the footer */
+        padding: 10px; 
     }
 
     .footer-content {
-        flex-direction: column; /* Stack sections vertically on mobile */
-        align-items: center; /* Center content */
+        flex-direction: column;
+        align-items: center; 
     }
 
     .footer-section {
-        flex: 1 1 100%; /* Make each section full width on mobile */
-        margin: 10px 0; /* Add vertical margin */
+        flex: 1 1 100%; 
+        margin: 10px 0; 
     }
 
     .footer-section h4 {
-        font-size: 1.1rem; /* Smaller font size for headings */
+        font-size: 1.1rem; 
     }
 
     .footer-section p {
-        font-size: 0.8rem; /* Smaller font size for paragraphs */
+        font-size: 0.8rem; 
     }
 
     .footer-section ul li a {
-        font-size: 0.75rem; /* Smaller font size for links */
+        font-size: 0.75rem;
     }
 
     .social-icons {
-        margin-top: 5px; /* Add space above social icons */
+        margin-top: 5px; 
     }
 
     .footer-bottom p{
-        font-size: 0.8rem; /* Smaller font size for footer bottom text */
-        padding: 5px 0; /* Reduced padding */
+        font-size: 0.8rem;
+        padding: 5px 0;
     }
 }

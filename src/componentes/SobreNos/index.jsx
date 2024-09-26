@@ -1,7 +1,5 @@
-// AboutUs.jsx
 import React from 'react';
-import './estilo.css'; // Certifique-se de que este arquivo CSS esteja atualizado
-
+import './estilo.css'; 
 const AboutUs = () => {
   return (
     <div className="about-us-container">

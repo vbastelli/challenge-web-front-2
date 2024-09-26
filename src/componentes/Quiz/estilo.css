@@ -5,18 +5,18 @@
     justify-content: center;
     height: 100vh;
     background: linear-gradient(to bottom right, #a50404, #613030);
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Arial', sans-serif;
     padding: 20px;
 }
 
 .quiz-card {
-    background-color: rgba(210, 180, 140, 0.9); /* Semi-transparent background */
+    background-color: rgba(210, 180, 140, 0.9); 
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     width: 90%;
-    max-width: 600px; /* Maximum width for the card */
+    max-width: 600px; 
     border: 1px solid black;
 }
 
@@ -40,7 +40,7 @@
 .answer-button {
     background-color: #F5F5DC;
     color: rgb(0, 0, 0);
-    border: 1px solid black; /* Contorno preto */
+    border: 1px solid black; 
     border-radius: 5px;
     padding: 12px 24px;
     margin: 10px;
@@ -48,40 +48,46 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     width: 220px;
-    font-weight: bold; /* Adicionado para um texto mais destacado */
+    font-weight: bold;
 }
 
 
 .answer-button:hover {
-    background-color: #e91e63;
+    background-color: #b4b4b4;
     transform: scale(1.05);
+    border: 2px solid black;
 }
 
 .correct, .correct:hover {
-    background-color: #4caf50; /* Green for correct answer */
+    background-color: #4caf50; 
 }
 
 .incorrect, .incorrect:hover {
-    background-color: #f44336; /* Red for incorrect answer */
+    background-color: #f44336;
 }
 
 .score-section {
+    color: black;
     text-align: center;
     font-size: 28px;
     margin-top: 20px;
     font-weight: bold;
 }
 
+.score-section h2{
+    color: black;
+}
+
 @media (max-width: 600px) {
     .question {
-        font-size: 20px; /* Reduzir o tamanho da fonte em telas menores */
+        font-size: 20px; 
     }
 
     .answer-button {
-        width: 180px; /* Ajusta a largura do botão em telas menores */
+        width: 180px; 
     }
 
     .score-section {
-        font-size: 24px; /* Reduz o tamanho da fonte para a pontuação em telas menores */
+        font-size: 24px;
     }
 }
