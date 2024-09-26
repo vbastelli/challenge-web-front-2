@@ -1,0 +1,62 @@
+.home-page {
+  position: relative;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Hide overflow for pseudo-element */
+}
+
+.home-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('mahindracarro.webp'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  filter: blur(2px); /* Add a subtle blur effect */
+  z-index: 1; /* Place behind other content */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  z-index: 2; /* Place above the blurred background */
+}
+
+h1 {
+  font-size: 3rem; /* Large title */
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5rem; /* Subtitle */
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #a30909; /* Button color */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.cta-button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+.title{
+  color: white;
+}

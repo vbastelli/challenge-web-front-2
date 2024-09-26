@@ -1,0 +1,79 @@
+.tabela {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Center the content */
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #2c3e50; /* Dark color for the heading */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #34495e; /* Slightly lighter than the h1 */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* White background for the table */
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensure rounded corners show */
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #3498db; /* Bright blue for table header */
+    color: #ffffff; /* White text for header */
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey for even rows */
+  }
+  
+  tr:hover {
+    background-color: #ecf0f1; /* Light grey on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+  }
+  
+  td {
+    color: #2c3e50; /* Dark color for the table text */
+    font-size: 1.1em; /* Slightly larger text */
+  }
+  
+  @media (max-width: 600px) {
+    .corrida-simulada {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    h1 {
+      font-size: 2em; /* Smaller heading on mobile */
+    }
+  
+    h2 {
+      font-size: 1.5em; /* Smaller subheading on mobile */
+    }
+  
+    td, th {
+      font-size: 0.9em; /* Smaller font size for mobile */
+    }
+  }
+  

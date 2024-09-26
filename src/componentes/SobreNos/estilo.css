@@ -1,0 +1,82 @@
+/* AboutUs.css */
+.about-us-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: black; /* Fundo preto para destaque */
+  justify-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para os itens */
+.mosaic-item {
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  text-align: center; /* Centraliza o texto horizontalmente */
+  display: flex; /* Adiciona o flexbox */
+  flex-direction: column; /* Alinha os itens em coluna */
+  align-items: center; /* Centraliza os itens */
+}
+
+.mosaic-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5); /* Efeito de hover com sombra */
+}
+
+/* Estilos específicos para cada item */
+.item1 {
+  background-color: red;
+  grid-column: span 2; /* Ocupa duas colunas */
+}
+
+.item2 {
+  background-color: darkred;
+}
+
+.item3 {
+  background-color: #d32f2f; /* Cor vermelha diferente */
+}
+
+.item4 {
+  background-color: red;
+}
+
+.item5 {
+  background-color: darkred;
+  grid-column: span 2; /* Ocupa duas colunas */
+  grid-row: span 2; /* Ocupa duas linhas */
+  align-self: center; /* Garante que o item seja centralizado na linha do grid */
+}
+
+/* Estilos para imagens */
+.mosaic-image {
+  width: 100%; /* Largura total do grid */
+  border-radius: 10px; /* Bordas arredondadas para as imagens */
+  object-fit: cover; /* Cobre o espaço sem distorcer */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mosaic-image:hover {
+  transform: scale(1.02); /* Efeito de hover nas imagens */
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5); /* Efeito de hover com sombra */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .about-us-container {
+    grid-template-columns: repeat(2, 1fr); /* Muda para 2 colunas em telas menores */
+  }
+
+  .item5 {
+    margin-left: 0; /* Remove margem à esquerda para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-container {
+    grid-template-columns: 1fr; /* Muda para 1 coluna em telas ainda menores */
+  }
+}

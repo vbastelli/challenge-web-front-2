@@ -1,0 +1,120 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px; /* Flex-grow and shrink */
+    margin: 20px;
+    text-align: center;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.35rem;
+
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section.social-media {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the icons */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1e90ff; /* Change color on hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.footer-bottom p{
+    font-size: 1.35rem;
+}
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    
+    .footer {
+        padding: 10px; /* Reduce padding for the footer */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on mobile */
+        align-items: center; /* Center content */
+    }
+
+    .footer-section {
+        flex: 1 1 100%; /* Make each section full width on mobile */
+        margin: 10px 0; /* Add vertical margin */
+    }
+
+    .footer-section h4 {
+        font-size: 1.1rem; /* Smaller font size for headings */
+    }
+
+    .footer-section p {
+        font-size: 0.8rem; /* Smaller font size for paragraphs */
+    }
+
+    .footer-section ul li a {
+        font-size: 0.75rem; /* Smaller font size for links */
+    }
+
+    .social-icons {
+        margin-top: 5px; /* Add space above social icons */
+    }
+
+    .footer-bottom p{
+        font-size: 0.8rem; /* Smaller font size for footer bottom text */
+        padding: 5px 0; /* Reduced padding */
+    }
+}

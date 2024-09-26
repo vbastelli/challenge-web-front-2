@@ -1,0 +1,79 @@
+/* Navbar personalizada */
+.custom-navbar {
+    background-color: #333; /* Fundo escuro personalizado */
+    padding: 10px 20px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    gap: 0;
+}
+
+.nav-item .nav-link {
+    color: #fff;
+    margin-right: 20px;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover nos links da navbar */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Hamburguer personalizado (aparece apenas em telas pequenas) */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.5%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.formula-logo {
+    width: 250px; /* Default width for larger screens */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mahindra-logo {
+    width: 180px; /* Default width for larger screens */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.formula-logo:hover, .mahindra-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do menu quando colapsado */
+.navbar-collapse {
+    transition: max-height 0.5s ease-out; /* Tempo e estilo da transição */
+}
+
+/* Estilo do menu quando aberto */
+.navbar-collapse.show {
+    max-height: 500px; /* Ajuste conforme o tamanho necessário para o conteúdo */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 991.98px) {
+    /* Para telas menores, os itens ficam empilhados */
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust logo sizes for mobile */
+    .formula-logo {
+        width: 150px; /* Smaller width for mobile */
+    }
+
+    .mahindra-logo {
+        width: 120px; /* Smaller width for mobile */
+    }
+}
