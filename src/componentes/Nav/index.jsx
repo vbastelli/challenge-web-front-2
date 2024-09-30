@@ -39,7 +39,13 @@ const Navbar = () => {
         <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
+              <Link className="nav-link" to="/news">Notícias</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/tabela">Tabela de Classificação</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/eventos">Eventos</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/pilotos">Pilotos</Link>

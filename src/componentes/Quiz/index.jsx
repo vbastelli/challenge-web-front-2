@@ -77,7 +77,7 @@ const Quiz = () => {
             .map((question, index) => ({ question, index }))
             .sort(() => Math.random() - 0.5);
         
-        return shuffledQuestions.slice(0, 5).map(item => item.index);
+        return shuffledQuestions.slice(0, 10).map(item => item.index);
     };
 
     const [selectedQuestions] = useState(getRandomQuestions());

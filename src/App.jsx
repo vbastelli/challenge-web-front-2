@@ -9,6 +9,9 @@ import Error404 from './componentes/Error404/index';
 import Home from './componentes/Home/index';
 import Footer from './componentes/Footer';
 import Quiz from './componentes/Quiz';
+import Eventos from './componentes/Eventos/Eventos';
+import Noticias from './componentes/News/index';
+
 
 function App() {
   return (
@@ -22,6 +25,8 @@ function App() {
           <Route path="/sobre-nos" element={<SobreNos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/eventos" element={<Eventos />}/>
+          <Route path="/news" element={<Noticias />}/>
           <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer/>

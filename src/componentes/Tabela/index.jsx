@@ -27,7 +27,7 @@ const Tabela = () => {
           <tr>
             <th>Pos</th>
             <th>Piloto</th>
-            <th>Equipa</th>
+            <th>Equipe</th>
             <th>Pontos</th>
           </tr>
         </thead>

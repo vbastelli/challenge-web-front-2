@@ -6,7 +6,7 @@
 
 .filters {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;  /* Stack filters vertically on small screens */
     margin-bottom: 20px;
 }
 
@@ -17,7 +17,8 @@
     font-size: 1em;
     background-color: #fff;
     cursor: pointer;
-    width: 48%;
+    width: 100%;             /* Full width for select elements */
+    margin-bottom: 10px;     /* Space between select elements */
 }
 
 .drivers-list {
@@ -66,9 +67,79 @@
     color: #888;
 }
 
+/* Estilo do Título */
+.carros-page h2 {
+    text-align: center;                 
+    color: #ffffff;                     
+    margin: 20px auto 35px;            
+    font-size: 2em;                     
+    font-weight: bold;                  
+    max-width: 1000px;                 
+    padding: 20px 0px;                 
+    height: 80px;                       
+}
+
+/* Estilo do Botão Votar */
+.vote-button {
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave para a sombra */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao botão */
+}
+
+/* Adiciona hover ao botão */
+.vote-button:hover {
+    background-color: #218838; /* Verde mais escuro */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Estilo do contêiner do botão */
+.vote-container {
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+    text-align: center;         
+    margin: 20px 0;            
+}
+
+.titulo {
+    background-color: #218838; 
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 2.5em; 
+    color: white; 
+    text-align: center; 
+    margin: 20px 0; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+    .filters {
+        flex-direction: column; /* Stack filters vertically */
+    }
+
+    .filters select {
+        width: 100%; /* Full width for select elements */
+        margin-bottom: 10px; /* Space between selects */
+    }
+
     .driver-card {
         width: 100%; 
         max-width: none; 
+    }
+
+    .carros-page h2 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .titulo {
+        font-size: 2em; /* Adjust font size for smaller screens */
     }
 }
