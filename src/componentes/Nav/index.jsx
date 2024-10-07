@@ -5,9 +5,19 @@ import './estilo.css'; // Caso tenha estilos adicionais
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false);
+  const [isRaceDataDropdownOpen, setIsRaceDataDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleAccountDropdown = () => {
+    setIsAccountDropdownOpen(!isAccountDropdownOpen);
+  };
+
+  const toggleRaceDataDropdown = () => {
+    setIsRaceDataDropdownOpen(!isRaceDataDropdownOpen);
   };
 
   return (
@@ -45,12 +55,6 @@ const Navbar = () => {
               <Link className="nav-link" to="/tabela">Tabela de Classificação</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/eventos">Eventos</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/dados">Dados</Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" to="/pilotos">Pilotos</Link>
             </li>
             <li className="nav-item">
@@ -59,11 +63,43 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/sobre-nos">Sobre Nós</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Login</Link>
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                onClick={toggleRaceDataDropdown}
+                role="button"
+                aria-expanded={isRaceDataDropdownOpen}
+              >
+                Dados de Corrida
+              </Link>
+              <ul className={`dropdown-menu ${isRaceDataDropdownOpen ? 'show' : ''}`}>
+                <li>
+                  <Link className="dropdown-item" to="/dados">Dados Clima</Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/eventos">Eventos</Link>
+                </li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/perfil">Perfil</Link>
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                onClick={toggleAccountDropdown}
+                role="button"
+                aria-expanded={isAccountDropdownOpen}
+              >
+                Conta
+              </Link>
+              <ul className={`dropdown-menu ${isAccountDropdownOpen ? 'show' : ''}`}>
+                <li>
+                  <Link className="dropdown-item" to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/perfil">Perfil</Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

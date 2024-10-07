@@ -1,17 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
-    font-family: 'Montserrat', sans-serif; /* Fonte consistente para todo o site */
-    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura e altura */
+    font-family: 'Montserrat', sans-serif; /* Consistent font across the site */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+}
+
+html, body {
+    height: 100%; /* Garante que a altura do HTML e do body seja 100% */
+    margin: 0; /* Remove margens padrão */
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Define o layout como coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 70vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
+    padding: 20px; /* Adiciona um pouco de padding */
 }
 
 .user-profile {
+    flex-grow: 1; /* Permite que a seção do perfil do usuário cresça */
     max-width: 600px;
-    margin: 20px auto; /* Margem superior e centraliza horizontalmente */
+    width: 100%; /* Garante que o perfil utilize a largura total disponível */
+    margin: 20px auto; /* Centraliza horizontalmente */
     padding: 30px; /* Mais espaço interno */
-    background-color: #ffffff; /* Cor de fundo branca */
-    border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra suave */
     transition: box-shadow 0.3s; /* Transição suave ao passar o mouse */
 }
 
@@ -21,8 +38,8 @@
 
 .profile-title {
     text-align: center;
-    color: #0056b3; /* Azul mais escuro */
-    font-size: 28px; /* Tamanho do título maior */
+    color: #0056b3; /* Azul escuro */
+    font-size: 28px; /* Título maior */
     margin-bottom: 25px;
     font-weight: 700; /* Peso da fonte mais forte */
 }
@@ -30,109 +47,154 @@
 .profile-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Alinha os itens ao centro */
     margin-bottom: 20px;
 }
 
+/* Continue com o restante do seu CSS sem alterações */
+
+
 .profile-image {
-    width: 120px; /* Aumentando a largura da imagem do perfil */
-    height: 120px; /* Aumentando a altura da imagem do perfil */
-    border-radius: 50%; /* Imagem redonda */
-    object-fit: cover; /* Cobre o contêiner sem distorção */
-    border: 3px solid #0056b3; /* Borda azul ao redor da imagem */
-    margin-bottom: 15px; /* Mais espaço abaixo da imagem */
+    width: 120px; /* Increased profile image size */
+    height: 120px; /* Increased profile image size */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Cover container without distortion */
+    border: 3px solid #0056b3; /* Blue border around the image */
+    margin-bottom: 15px; /* More space below the image */
+}
+
+.label-container {
+    text-align: center; /* Centraliza o texto dentro do container */
 }
 
 .profile-image-input {
-    margin-bottom: 10px; /* Espaçamento entre o campo de upload de imagem */
+    display: block; /* Faz o input ocupar a largura do contêiner */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    font-size: 15px;
+    margin-bottom: 7px; /* Espaço entre o input de upload */
+}
+
+.custom-upload-label {
+    display: block; /* Faz o label ocupar a largura do contêiner */
+    text-align: center; /* Centraliza o texto */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin-bottom: 7px; /* Espaço abaixo do label */
+    color: #666; /* Cor do texto */
+    font-size: 16px;
 }
 
 .change-photo-text {
-    color: #666; /* Cor cinza */
+    color: #666; /* Gray text color */
     font-size: 14px;
-    text-align: center; /* Centraliza o texto */
+    text-align: center; /* Centered text */
 }
 
 .favorite-drivers {
-    margin-top: 30px; /* Mais espaço acima da seção de pilotos favoritos */
+    margin-top: 30px; /* More space above favorite drivers section */
+    flex-grow: 1; /* Allows the favorite drivers section to grow */
 }
 
 .drivers-title {
-    font-size: 22px; /* Título maior para pilotos favoritos */
+    font-size: 22px; /* Larger title for favorite drivers */
     margin-bottom: 15px;
-    color: #333; /* Cor do texto do título */
+    color: #333; /* Title text color */
     text-align: center;
-    font-weight: 600; /* Peso da fonte mais forte */
+    font-weight: 600; /* Stronger font weight */
 }
 
 .drivers-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Espaçamento entre os cartões */
-    justify-content: center;
+    gap: 15px; /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
 }
 
 .driver-card {
-    background-color: #f2f2f2; /* Cor de fundo suave */
-    border: 1px solid #ddd; /* Borda suave */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 15px; /* Mais espaço interno */
+    background-color: #f2f2f2; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* More internal space */
     display: flex;
     align-items: center;
-    width: 160px; /* Largura fixa dos cartões */
+    width: 160px; /* Fixed width for cards */
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
 }
 
 .driver-card:hover {
-    transform: translateY(-5px); /* Leve movimento ao passar o mouse */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+    transform: translateY(-5px); /* Slight movement on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .driver-icon {
-    font-size: 35px; /* Aumentando o tamanho do ícone do piloto */
-    margin-bottom: 5px; /* Espaço abaixo do ícone */
-    color: #0056b3; /* Cor azul do ícone */
+    font-size: 35px; /* Larger driver icon size */
+    margin-bottom: 5px; /* Space below icon */
+    color: #0056b3; /* Blue icon color */
 }
 
 .driver-name {
-    font-size: 18px; /* Tamanho do texto do nome do piloto */
-    color: #333; /* Cor do texto */
+    font-size: 18px; /* Driver name text size */
+    color: #333; /* Text color */
 }
 
 .no-drivers {
     text-align: center;
-    color: #999; /* Cor cinza */
-    font-style: italic; /* Itálico para indicar que não há pilotos */
+    color: #999; /* Gray color */
+    font-style: italic; /* Italic text to indicate no favorites */
 }
 
-/* Media Queries para Responsividade */
+.login-button {
+    display: inline-block; /* Muda para inline-block */
+    padding: 12px;
+    background-color: #ff6600; /* Cor de fundo laranja */
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    color: white; /* Cor do texto branco */
+    font-size: 25px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+
+
+.not-logged-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    height: 70vh; /* Ocupa toda a altura da janela */
+    background-color: #f9f9f9; /* Cor de fundo */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .user-profile {
-        padding: 20px; /* Menos padding em telas menores */
-        max-width: 90%; /* Largura máxima de 90% */
+        padding: 20px; /* Less padding on smaller screens */
+        max-width: 90%; /* Max width of 90% */
     }
 
     .profile-image {
-        width: 100px; /* Reduzindo a largura da imagem do perfil */
-        height: 100px; /* Reduzindo a altura da imagem do perfil */
+        width: 100px; /* Reduced profile image size */
+        height: 100px; /* Reduced profile image size */
     }
 
     .driver-card {
-        width: 140px; /* Reduzindo a largura dos cartões em telas menores */
+        width: 140px; /* Reduced card width on smaller screens */
     }
 
     .drivers-title {
-        font-size: 20px; /* Reduzindo o tamanho do título em telas menores */
+        font-size: 20px; /* Smaller title on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .profile-title {
-        font-size: 24px; /* Ajustando o tamanho do título */
+        font-size: 24px; /* Adjusted title size */
     }
 
     .driver-name {
-        font-size: 16px; /* Ajustando o tamanho do texto do nome do piloto */
+        font-size: 16px; /* Adjusted driver name size */
     }
 }

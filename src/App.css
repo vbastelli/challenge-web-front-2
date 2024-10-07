@@ -1,0 +1,17 @@
+html, body {
+    height: 100%; /* Define a altura total para o container */
+    margin: 0; /* Remove margens padrão */
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    min-height: 100vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
+}
+
+.content {
+    flex-grow: 1; /* Permite que a seção de conteúdo cresça e ocupe o espaço restante */
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo for muito longo */
+}
+
+/* Estilos adicionais para Nav e Footer se necessário */

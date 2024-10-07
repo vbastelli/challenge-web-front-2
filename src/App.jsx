@@ -14,26 +14,27 @@ import Noticias from './componentes/News/index';
 import Dados from './componentes/Dados/Dados';
 import UserProfile from './componentes/UserProfile/UserProfile';
 
-
 function App() {
   return (
     <Router>
-      <div>
+      <div className="app-container">
         <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tabela" element={<Tabela />} />
-          <Route path="/pilotos" element={<Pilotos />} />
-          <Route path="/sobre-nos" element={<SobreNos />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/eventos" element={<Eventos />}/>
-          <Route path="/news" element={<Noticias />}/>
-          <Route path="/dados" element={<Dados />}/>
-          <Route path="/perfil" element={<UserProfile />}/>
-          <Route path="*" element={<Error404 />} />
-        </Routes>
-        <Footer/>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tabela" element={<Tabela />} />
+            <Route path="/pilotos" element={<Pilotos />} />
+            <Route path="/sobre-nos" element={<SobreNos />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/eventos" element={<Eventos />} />
+            <Route path="/news" element={<Noticias />} />
+            <Route path="/dados" element={<Dados />} />
+            <Route path="/perfil" element={<UserProfile />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </Router>
   );
