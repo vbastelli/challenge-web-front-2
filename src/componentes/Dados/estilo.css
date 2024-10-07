@@ -1,0 +1,101 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif; /* Fonte padrão para o corpo */
+}
+
+.dados-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    background-image: url('./circuito-f1.jpg'); /* Caminho para sua imagem de fundo */
+    background-size: cover; /* Faz com que a imagem cubra todo o container */
+    background-position: center; /* Centraliza a imagem de fundo */
+    padding: 40px; /* Aumenta o espaçamento interno */
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    max-width: 800px; /* Aumenta a largura máxima do container */
+    margin: auto; /* Centraliza o container na página */
+    text-align: center;
+    color: #000000; /* Cor do texto */
+    height: 80vh; /* Ocupar 100% da altura da tela */
+    position: relative; /* Permite a sobreposição de elementos */
+    overflow: hidden; /* Oculta partes que saem do container */
+    margin: 30px auto 30px auto;
+}
+
+.dados-container:before {
+    content: '';
+    position: absolute; /* Posiciona o gradiente atrás do conteúdo */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(230, 230, 230, 0.5); /* Gradiente escuro para melhorar a legibilidade */
+    border-radius: 15px; /* Mesmas bordas arredondadas */
+    z-index: 1; /* Coloca o gradiente atrás do conteúdo */
+}
+
+.dados-container h2 {
+    font-size: 2.5rem;
+    color: #05034d; /* Cor do título */
+    margin-bottom: 30px; /* Aumenta a margem inferior */
+    font-weight: 700; /* Negrito mais forte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra mais pronunciada para o título */
+    z-index: 2; /* Coloca o título acima do gradiente */
+}
+
+.dados-content {
+    z-index: 2; /* Coloca o conteúdo acima do gradiente */
+}
+
+.dados-content p {
+    font-size: 1.5rem;
+    margin: 15px 0; /* Aumenta a margem vertical */
+    font-weight: ;
+}
+
+.dados-content strong {
+    color: #05034d; /* Cor do texto em negrito */
+}
+
+.imagem {
+    width: 100%; /* Largura total do container */
+    height: auto; /* Altura automática para manter proporção */
+    max-height: 350px; /* Altura máxima da imagem */
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra mais suave */
+    object-fit: cover; /* Cobre o espaço disponível mantendo a proporção */
+    margin-bottom: 30px; /* Aumenta o espaçamento abaixo da imagem */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .dados-container {
+        padding: 20px; /* Menos padding em telas menores */
+    }
+
+    .dados-container h2 {
+        font-size: 2rem; /* Ajustando o tamanho do título para telas menores */
+    }
+
+    .dados-content p {
+        font-size: 1.2rem; /* Ajustando o tamanho do texto para telas menores */
+    }
+
+    .imagem {
+        max-height: 250px; /* Diminuindo a altura máxima da imagem em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .dados-content p {
+        font-size: 1rem; /* Ajustando ainda mais para telas muito pequenas */
+    }
+
+    .imagem {
+        max-height: 180px; /* Diminuindo ainda mais a altura máxima da imagem */
+    }
+}

@@ -11,6 +11,8 @@ import Footer from './componentes/Footer';
 import Quiz from './componentes/Quiz';
 import Eventos from './componentes/Eventos/Eventos';
 import Noticias from './componentes/News/index';
+import Dados from './componentes/Dados/Dados';
+import UserProfile from './componentes/UserProfile/UserProfile';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/eventos" element={<Eventos />}/>
           <Route path="/news" element={<Noticias />}/>
+          <Route path="/dados" element={<Dados />}/>
+          <Route path="/perfil" element={<UserProfile />}/>
           <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer/>

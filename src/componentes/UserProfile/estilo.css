@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif; /* Fonte consistente para todo o site */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura e altura */
+}
+
+.user-profile {
+    max-width: 600px;
+    margin: 20px auto; /* Margem superior e centraliza horizontalmente */
+    padding: 30px; /* Mais espaço interno */
+    background-color: #ffffff; /* Cor de fundo branca */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+    transition: box-shadow 0.3s; /* Transição suave ao passar o mouse */
+}
+
+.user-profile:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+.profile-title {
+    text-align: center;
+    color: #0056b3; /* Azul mais escuro */
+    font-size: 28px; /* Tamanho do título maior */
+    margin-bottom: 25px;
+    font-weight: 700; /* Peso da fonte mais forte */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 120px; /* Aumentando a largura da imagem do perfil */
+    height: 120px; /* Aumentando a altura da imagem do perfil */
+    border-radius: 50%; /* Imagem redonda */
+    object-fit: cover; /* Cobre o contêiner sem distorção */
+    border: 3px solid #0056b3; /* Borda azul ao redor da imagem */
+    margin-bottom: 15px; /* Mais espaço abaixo da imagem */
+}
+
+.profile-image-input {
+    margin-bottom: 10px; /* Espaçamento entre o campo de upload de imagem */
+}
+
+.change-photo-text {
+    color: #666; /* Cor cinza */
+    font-size: 14px;
+    text-align: center; /* Centraliza o texto */
+}
+
+.favorite-drivers {
+    margin-top: 30px; /* Mais espaço acima da seção de pilotos favoritos */
+}
+
+.drivers-title {
+    font-size: 22px; /* Título maior para pilotos favoritos */
+    margin-bottom: 15px;
+    color: #333; /* Cor do texto do título */
+    text-align: center;
+    font-weight: 600; /* Peso da fonte mais forte */
+}
+
+.drivers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaçamento entre os cartões */
+    justify-content: center;
+}
+
+.driver-card {
+    background-color: #f2f2f2; /* Cor de fundo suave */
+    border: 1px solid #ddd; /* Borda suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px; /* Mais espaço interno */
+    display: flex;
+    align-items: center;
+    width: 160px; /* Largura fixa dos cartões */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+.driver-card:hover {
+    transform: translateY(-5px); /* Leve movimento ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+}
+
+.driver-icon {
+    font-size: 35px; /* Aumentando o tamanho do ícone do piloto */
+    margin-bottom: 5px; /* Espaço abaixo do ícone */
+    color: #0056b3; /* Cor azul do ícone */
+}
+
+.driver-name {
+    font-size: 18px; /* Tamanho do texto do nome do piloto */
+    color: #333; /* Cor do texto */
+}
+
+.no-drivers {
+    text-align: center;
+    color: #999; /* Cor cinza */
+    font-style: italic; /* Itálico para indicar que não há pilotos */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .user-profile {
+        padding: 20px; /* Menos padding em telas menores */
+        max-width: 90%; /* Largura máxima de 90% */
+    }
+
+    .profile-image {
+        width: 100px; /* Reduzindo a largura da imagem do perfil */
+        height: 100px; /* Reduzindo a altura da imagem do perfil */
+    }
+
+    .driver-card {
+        width: 140px; /* Reduzindo a largura dos cartões em telas menores */
+    }
+
+    .drivers-title {
+        font-size: 20px; /* Reduzindo o tamanho do título em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-title {
+        font-size: 24px; /* Ajustando o tamanho do título */
+    }
+
+    .driver-name {
+        font-size: 16px; /* Ajustando o tamanho do texto do nome do piloto */
+    }
+}

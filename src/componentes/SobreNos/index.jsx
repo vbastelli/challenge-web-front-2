@@ -4,6 +4,8 @@ import './estilo.css';
 const AboutUs = () => {
   return (
     <div className="about-us-container">
+      <img className="mosaic-image" src="piloto-formula-e.jpg" alt="Imagem da Fórmula E" />
+
       <div className="mosaic-item item1">
         <h2>Bem-vindo ao MadevRace!</h2>
         <p>
@@ -12,6 +14,7 @@ const AboutUs = () => {
           Venha explorar o mundo da Fórmula E conosco!
         </p>
       </div>
+
       <img className="mosaic-image" src="formulaeeeee.jpg" alt="Imagem da Fórmula E" />
       
       <div className="mosaic-item item2">
@@ -21,8 +24,9 @@ const AboutUs = () => {
           Queremos ser o seu ponto de referência para todas as novidades e eventos do mundo das corridas elétricas.
         </p>
       </div>
-      <img className="mosaic-image" src="race.webp" alt="Imagem de corrida" />
       
+      <img className="mosaic-image" src="race.webp" alt="Imagem de corrida" />
+
       <div className="mosaic-item item3">
         <h2>O que oferecemos</h2>
         <div className="offerings-list">
@@ -50,15 +54,12 @@ const AboutUs = () => {
             <img className="offering-icon" src="events-icon.png" alt="Eventos" />
             <p>Calendário de eventos e corridas ao vivo para você não perder nada</p>
           </div>
+          {/* Novo card adicionado */}
         </div>
       </div>
 
-
-
-
-
-      <img className="mosaic-image" src="imagemtecnologia.jpg" alt="Imagem de tecnologia" />
       
+      <img className="mosaic-image" src="imagemtecnologia.jpg" alt="Imagem de tecnologia" />
       <div className="mosaic-item item4">
         <h2>Participe!</h2>
         <p>
@@ -66,7 +67,9 @@ const AboutUs = () => {
           Estamos sempre buscando novas formas de engajar nossos usuários e tornar sua experiência única.
         </p>
       </div>
+      
       <img className="mosaic-image" src="fans.webp" alt="Imagem de diversão" />
+      
     </div>
   );
 };

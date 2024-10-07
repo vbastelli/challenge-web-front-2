@@ -5,6 +5,7 @@ const Pilotos = () => {
   const [filteredDrivers, setFilteredDrivers] = useState([]);
   const [nationalityFilter, setNationalityFilter] = useState('');
   const [teamFilter, setTeamFilter] = useState('');
+  const [favoriteDrivers, setFavoriteDrivers] = useState([]);
 
   const pilotos = [
     { nome: "Pascal Wehrlein", pontos: 198, nationality: "Germany", team: "Porsche", birthdate: "1995-10-18", number: 94 },
@@ -35,20 +36,40 @@ const Pilotos = () => {
     { nome: "Jordan King", pontos: 0, nationality: "United Kingdom", team: "NIO", birthdate: "1993-01-10", number: 0 },
     { nome: "Paul Aron", pontos: 0, nationality: "Estonia", team: "NIO", birthdate: "2003-09-17", number: 0 },
     { nome: "Caio Collet", pontos: 0, nationality: "Brazil", team: "NIO", birthdate: "2003-03-18", number: 0 },
-  ];
+  ];  
+  
+  // Fetch favorites from localStorage when the component mounts
+  useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem('favoriteDrivers')) || [];
+    setFavoriteDrivers(savedFavorites);
+  }, []);
+
+  // Save favorite drivers to localStorage whenever the favoriteDrivers state changes
+  useEffect(() => {
+    if (favoriteDrivers.length > 0) {
+      localStorage.setItem('favoriteDrivers', JSON.stringify(favoriteDrivers));
+    }
+  }, [favoriteDrivers]);
 
   useEffect(() => {
     setFilteredDrivers(pilotos); // Initialize with all drivers
   }, []);
 
   useEffect(() => {
-    setFilteredDrivers(
-      pilotos.filter((driver) => 
-        (nationalityFilter ? driver.nationality === nationalityFilter : true) &&
-        (teamFilter ? driver.team === teamFilter : true)
-      )
+    // Filter drivers based on nationality and team
+    const filtered = pilotos.filter((driver) => 
+      (nationalityFilter ? driver.nationality === nationalityFilter : true) &&
+      (teamFilter ? driver.team === teamFilter : true)
     );
-  }, [nationalityFilter, teamFilter]);
+    
+    // Show favorited drivers first
+    const sortedDrivers = [
+      ...filtered.filter(driver => favoriteDrivers.includes(driver.nome)),
+      ...filtered.filter(driver => !favoriteDrivers.includes(driver.nome))
+    ];
+    
+    setFilteredDrivers(sortedDrivers);
+  }, [nationalityFilter, teamFilter, favoriteDrivers]);
 
   const handleNationalityChange = (e) => {
     setNationalityFilter(e.target.value);
@@ -62,28 +83,25 @@ const Pilotos = () => {
     alert(`Você votou em ${driverName}!`);
   };
 
-  // Calculate total points to compute probabilities
+  const toggleFavorite = (driverName) => {
+    if (favoriteDrivers.includes(driverName)) {
+      setFavoriteDrivers(favoriteDrivers.filter(name => name !== driverName));
+    } else {
+      setFavoriteDrivers([...favoriteDrivers, driverName]);
+    }
+  };
+
   const totalPoints = pilotos.reduce((acc, piloto) => acc + piloto.pontos, 0);
-  
-  // Get unique teams for filtering
+
   const uniqueTeams = [...new Set(pilotos.map(driver => driver.team))];
 
   return (
-    <div className="carros-page">
-      <h2 className='titulo'>Vote em quem você acha que vai ganhar a próxima corrida:</h2>
-      <div className="filters">
+    <div className="pilotos-container">
+      <h2 className='pilotos-titulo'>Vote em quem você acha que vai ganhar a próxima corrida:</h2>
+      <div className="pilotos-filtros">
         <select onChange={handleNationalityChange} value={nationalityFilter}>
           <option value="">All Nationalities</option>
-          <option value="United Kingdom">United Kingdom</option>
-          <option value="Belgium">Belgium</option>
-          <option value="Brazil">Brazil</option>
-          <option value="Netherlands">Netherlands</option>
-          <option value="Germany">Germany</option>
-          <option value="France">France</option>
-          <option value="New Zealand">New Zealand</option>
-          <option value="Switzerland">Switzerland</option>
-          <option value="Portugal">Portugal</option>
-          <option value="India">India</option>
+          {/* Add other nationalities */}
         </select>
 
         <select onChange={handleTeamChange} value={teamFilter}>
@@ -94,42 +112,49 @@ const Pilotos = () => {
         </select>
       </div>
 
-      <div className="drivers-list">
+      <div className="pilotos-lista">
         {filteredDrivers.length > 0 ? (
           filteredDrivers.map((driver, index) => {
             const probability = totalPoints > 0 ? ((driver.pontos / totalPoints) * 100).toFixed(2) : 0;
+            const isFavorited = favoriteDrivers.includes(driver.nome);
             return (
-              <Driver 
+              <PilotoCard 
                 key={index} 
                 driver={driver} 
                 onVote={handleVote} 
+                onFavorite={toggleFavorite} 
                 probability={probability} 
+                isFavorited={isFavorited}
               />
             );
           })
         ) : (
-          <p>No drivers available</p>
+          <p>Nenhum piloto disponível</p>
         )}
       </div>
     </div>
   );
 };
 
-const Driver = ({ driver, onVote, probability }) => {
-  // Calculate age based on birthdate
+const PilotoCard = ({ driver, onVote, onFavorite, probability, isFavorited }) => {
   const birthDate = new Date(driver.birthdate);
   const age = new Date().getFullYear() - birthDate.getFullYear();
 
   return (
-    <div className="driver-card">
+    <div className={`piloto-card ${isFavorited ? 'favorito' : ''}`}>
       <h3>{driver.nome}</h3>
-      <p>Nationality: {driver.nationality}</p>
-      <p>Team: {driver.team}</p>
-      <p>Birthdate: {driver.birthdate} (Age: {age})</p>
-      <p>Driver Number: {driver.number}</p>
-      <p>Points: {driver.pontos}</p>
-      <p>Probability of Winning: {probability}%</p>
-      <button className="vote-button" onClick={() => onVote(driver.nome)}>Votar</button>
+      <p>Nacionalidade: {driver.nationality}</p>
+      <p>Equipe: {driver.team}</p>
+      <p>Data de Nascimento: {driver.birthdate} (Idade: {age})</p>
+      <p>Número: {driver.number}</p>
+      <p>Pontos: {driver.pontos}</p>
+      <p>Probabilidade de Vencer: {probability}%</p>
+      <div className='piloto-vote-container'>
+        <button className="piloto-vote-button" onClick={() => onVote(driver.nome)}>Votar</button>
+        <button className="piloto-favorite-button" onClick={() => onFavorite(driver.nome)}>
+          {isFavorited ? 'Desfavoritar' : 'Favoritar'}
+        </button>
+      </div>
     </div>
   );
 };

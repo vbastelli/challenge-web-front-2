@@ -1,16 +1,16 @@
-.carros-page {
+.pilotos-container {
     padding: 20px;
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
 }
 
-.filters {
+.pilotos-filtros {
     display: flex;
     flex-direction: column;  /* Stack filters vertically on small screens */
     margin-bottom: 20px;
 }
 
-.filters select {
+.pilotos-filtros select {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -21,14 +21,14 @@
     margin-bottom: 10px;     /* Space between select elements */
 }
 
-.drivers-list {
+.pilotos-lista {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.driver-card {
+.piloto-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -38,49 +38,41 @@
     max-width: 100%; 
     transition: transform 0.3s;
     border: 1px solid black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35); 
 }
 
-.driver-card:hover {
+.piloto-card:hover {
     transform: translateY(-5px);
     border: 2px solid black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.45); 
 }
 
-.driver-card h3 {
+.piloto-card h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #333;
 }
 
-.driver-card p {
+.piloto-card p {
     margin: 5px 0;
     color: #555;
     font-size: 0.9em;
 }
 
-.driver-card p strong {
-    color: #333;
+.pilotos-titulo {
+    background-color: #218838; 
+    padding: 20px; 
+    border-radius: 40px;
+    font-size: 2.4em; 
+    color: white; 
+    text-align: center; 
+    margin: 20px 0px; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
 }
 
-.no-drivers {
-    text-align: center;
-    font-size: 1.2em;
-    color: #888;
-}
-
-/* Estilo do Título */
-.carros-page h2 {
-    text-align: center;                 
-    color: #ffffff;                     
-    margin: 20px auto 35px;            
-    font-size: 2em;                     
-    font-weight: bold;                  
-    max-width: 1000px;                 
-    padding: 20px 0px;                 
-    height: 80px;                       
-}
-
-/* Estilo do Botão Votar */
-.vote-button {
+.piloto-vote-button {
     background-color: #28a745; /* Verde */
     color: white;
     padding: 10px 15px;
@@ -88,58 +80,41 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave para a sombra */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao botão */
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-/* Adiciona hover ao botão */
-.vote-button:hover {
+.piloto-vote-button:hover {
     background-color: #218838; /* Verde mais escuro */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Estilo do contêiner do botão */
-.vote-container {
-    display: flex;              
-    justify-content: center;    
-    align-items: center;        
-    text-align: center;         
-    margin: 20px 0;            
+.piloto-vote-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;          
+    gap: 10px; 
+    margin: 10px;              
 }
 
-.titulo {
-    background-color: #218838; 
-    padding: 10px;
-    border-radius: 50px;
-    font-size: 2.5em; 
-    color: white; 
-    text-align: center; 
-    margin: 20px 0; 
-    font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+.piloto-favorite-button {
+    background-color: #ffae42;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .filters {
-        flex-direction: column; /* Stack filters vertically */
-    }
+.piloto-favorite-button:hover {
+    background-color: #f7950f;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+}
 
-    .filters select {
-        width: 100%; /* Full width for select elements */
-        margin-bottom: 10px; /* Space between selects */
-    }
-
-    .driver-card {
-        width: 100%; 
-        max-width: none; 
-    }
-
-    .carros-page h2 {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
-    }
-
-    .titulo {
-        font-size: 2em; /* Adjust font size for smaller screens */
-    }
+.favorito {
+    background-color: #ffe699; /* Cor amarela clara */
 }

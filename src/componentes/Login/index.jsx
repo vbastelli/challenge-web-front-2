@@ -4,15 +4,17 @@ import './estilo.css';
 const Login = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState(''); // Novo estado para o email
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Novo estado para verificar se o usuário está logado
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault(); 
     if (username && password) {
       if (isRegistering) {
-        // Salva nome de usuário e senha no SessionStorage
+        // Salva nome de usuário, email e senha no SessionStorage
         sessionStorage.setItem('username', username);
+        sessionStorage.setItem('email', email); // Salva email
         sessionStorage.setItem('password', password);
         alert('Registrado com sucesso!');
       } else {
@@ -22,13 +24,14 @@ const Login = () => {
 
         if (storedUsername === username && storedPassword === password) {
           alert('Logado com sucesso!');
-          setIsLoggedIn(true); // Atualiza o estado para logado
+          sessionStorage.setItem('loginDate', new Date().toString()); // Salva a data de login
+          setIsLoggedIn(true);
         } else {
           alert('Nome ou senha inválido.');
         }
       }
-      // Limpa os campos de entrada
       setUsername('');
+      setEmail(''); // Limpa o campo de email
       setPassword('');
     } else {
       alert('Por favor coloque usuário e senha.');
@@ -36,16 +39,18 @@ const Login = () => {
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false); // Atualiza o estado para deslogado
-    sessionStorage.removeItem('username'); // Remove o nome de usuário do SessionStorage
-    sessionStorage.removeItem('password'); // Remove a senha do SessionStorage
+    setIsLoggedIn(false);
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('email'); // Remove o email
+    sessionStorage.removeItem('password');
+    sessionStorage.removeItem('loginDate'); // Remove a data de login
     alert('Deslogado com sucesso!');
   };
 
   return (
     <div className="login-page">
       <div className="login-box">
-        {isLoggedIn ? ( // Condição para mostrar a interface de logout
+        {isLoggedIn ? (
           <>
             <h2>Bem-vindo, {sessionStorage.getItem('username')}!</h2>
             <button className="logout-btn" onClick={handleLogout}>Logout</button>
@@ -64,6 +69,18 @@ const Login = () => {
                 />
                 <span className="icon">👤</span>
               </div>
+              {isRegistering && ( // Campo de email aparece somente no registro
+                <div className="input-group">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <span className="icon">📧</span>
+                </div>
+              )}
               <div className="input-group">
                 <input
                   type="password"
@@ -74,7 +91,7 @@ const Login = () => {
                 />
                 <span className="icon">🔒</span>
               </div>
-              <button type="submit" className="login-btn" disabled={isLoggedIn}> {/* Desabilita o botão se o usuário estiver logado */}
+              <button type="submit" className="login-btn" disabled={isLoggedIn}>
                 {isRegistering ? 'Registrar' : 'Login'}
               </button>
             </form>
