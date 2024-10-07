@@ -1,0 +1,34 @@
+{
+    "season": "2023/2024",
+    "standings": [
+      { "pos": 1, "driver": "Pascal Wehrlein", "team": "TAG Heuer Porsche Formula E Team", "points": 198 },
+      { "pos": 2, "driver": "Mitch Evans", "team": "Jaguar TCS Racing", "points": 192 },
+      { "pos": 3, "driver": "Nick Cassidy", "team": "Jaguar TCS Racing", "points": 176 },
+      { "pos": 4, "driver": "Oliver Rowland", "team": "Nissan Formula E Team", "points": 156 },
+      { "pos": 5, "driver": "Jean-Éric Vergne", "team": "DS Penske", "points": 139 },
+      { "pos": 6, "driver": "António Félix Da Costa", "team": "TAG Heuer Porsche Formula E Team", "points": 134 },
+      { "pos": 7, "driver": "Jake Dennis", "team": "Andretti Formula E", "points": 122 },
+      { "pos": 8, "driver": "Maximilian Günther", "team": "Maserati MSG Racing", "points": 73 },
+      { "pos": 9, "driver": "Robin Frijns", "team": "Envision Racing", "points": 66 },
+      { "pos": 10, "driver": "Stoffel Vandoorne", "team": "DS Penske", "points": 61 },
+      { "pos": 11, "driver": "Sébastien Buemi", "team": "Envision Racing", "points": 53 },
+      { "pos": 12, "driver": "Nico Müller", "team": "ABT CUPRA Formula E Team", "points": 52 },
+      { "pos": 13, "driver": "Sam Bird", "team": "NEOM McLaren Formula E Team", "points": 48 },
+      { "pos": 14, "driver": "Jake Hughes", "team": "NEOM McLaren Formula E Team", "points": 48 },
+      { "pos": 15, "driver": "Norman Nato", "team": "Andretti Formula E", "points": 47 },
+      { "pos": 16, "driver": "Edoardo Mortara", "team": "Mahindra Racing", "points": 29 },
+      { "pos": 17, "driver": "Sacha Fenestraz", "team": "Nissan Formula E Team", "points": 26 },
+      { "pos": 18, "driver": "Nyck De Vries", "team": "Mahindra Racing", "points": 18 },
+      { "pos": 19, "driver": "Dan Ticktum", "team": "ERT Formula E Team", "points": 12 },
+      { "pos": 20, "driver": "Sérgio Sette Câmara", "team": "ERT Formula E Team", "points": 11 },
+      { "pos": 21, "driver": "Jehan Daruvala", "team": "Maserati MSG Racing", "points": 8 },
+      { "pos": 22, "driver": "Taylor Barnard", "team": "NEOM McLaren Formula E Team", "points": 5 },
+      { "pos": 23, "driver": "Lucas Di Grassi", "team": "ABT CUPRA Formula E Team", "points": 4 },
+      { "pos": 24, "driver": "Joel Eriksson", "team": "Envision Racing", "points": 2 },
+      { "pos": 25, "driver": "Kelvin Van der Linde", "team": "ABT CUPRA Formula E Team", "points": 0 },
+      { "pos": 26, "driver": "Jordan King", "team": "Mahindra Racing", "points": 0 },
+      { "pos": 27, "driver": "Paul Aron", "team": "Envision Racing", "points": 0 },
+      { "pos": 28, "driver": "Caio Collet", "team": "Nissan Formula E Team", "points": 0 }
+    ]
+  }
+  
