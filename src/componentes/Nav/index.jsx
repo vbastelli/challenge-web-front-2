@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './estilo.css'; // Caso tenha estilos adicionais
@@ -7,6 +7,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false);
   const [isRaceDataDropdownOpen, setIsRaceDataDropdownOpen] = useState(false);
+  
+  const accountDropdownRef = useRef(null);
+  const raceDataDropdownRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -19,6 +22,26 @@ const Navbar = () => {
   const toggleRaceDataDropdown = () => {
     setIsRaceDataDropdownOpen(!isRaceDataDropdownOpen);
   };
+
+  // Hook para fechar o dropdown ao clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
+        setIsAccountDropdownOpen(false);
+      }
+      if (raceDataDropdownRef.current && !raceDataDropdownRef.current.contains(event.target)) {
+        setIsRaceDataDropdownOpen(false);
+      }
+    };
+
+    // Adiciona o listener para cliques fora do dropdown
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    // Limpa o listener ao desmontar o componente
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark custom-navbar">
@@ -63,7 +86,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/sobre-nos">Sobre Nós</Link>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown" ref={raceDataDropdownRef}>
               <Link
                 className="nav-link dropdown-toggle"
                 to="#"
@@ -82,7 +105,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown" ref={accountDropdownRef}>
               <Link
                 className="nav-link dropdown-toggle"
                 to="#"
