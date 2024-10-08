@@ -95,7 +95,7 @@ const Pilotos = () => {
 
   const uniqueTeams = [...new Set(pilotos.map(driver => driver.team))];
 
-  return (
+return (
     <div className="pilotos-container">
       <h2 className='pilotos-titulo'>Vote em quem você acha que vai ganhar a próxima corrida:</h2>
       <div className="pilotos-filtros">
