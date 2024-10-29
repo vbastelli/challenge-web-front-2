@@ -6,7 +6,8 @@
         "team": "Andretti Autosport",
         "birthdate": "1995-06-16",
         "age": 29,
-        "nationality": "United Kingdom"
+        "nationality": "United Kingdom",
+        "instagram": "https://www.instagram.com/jakedennis19/"
       },
       {
         "number": 2,
@@ -14,7 +15,8 @@
         "team": "DS Penske",
         "birthdate": "1992-03-26",
         "age": 32,
-        "nationality": "Belgium"
+        "nationality": "Belgium",
+        "instagram": "https://www.instagram.com/svandoorne/"
       },
       {
         "number": 3,
@@ -22,7 +24,8 @@
         "team": "NIO Formula E Team",
         "birthdate": "1998-05-23",
         "age": 26,
-        "nationality": "Brazil"
+        "nationality": "Brazil",
+        "instagram": "https://www.instagram.com/sergiosettecamara/"
       },
       {
         "number": 4,
@@ -30,7 +33,8 @@
         "team": "DS Virgin Racing",
         "birthdate": "1991-08-07",
         "age": 33,
-        "nationality": "Netherlands"
+        "nationality": "Netherlands",
+        "instagram": "https://www.instagram.com/robinfrijns1/"
       },
       {
         "number": 5,
@@ -38,7 +42,8 @@
         "team": "McLaren",
         "birthdate": "1994-05-30",
         "age": 30,
-        "nationality": "United Kingdom"
+        "nationality": "United Kingdom",
+        "instagram": "https://www.instagram.com/jakehughesrace/"
       },
       {
         "number": 7,
@@ -46,7 +51,8 @@
         "team": "Maserati Racing",
         "birthdate": "1997-07-02",
         "age": 27,
-        "nationality": "Germany"
+        "nationality": "Germany",
+        "instagram": "https://www.instagram.com/maximilianguenther/"
       },
       {
         "number": 8,
@@ -54,7 +60,8 @@
         "team": "McLaren",
         "birthdate": "1987-01-09",
         "age": 37,
-        "nationality": "United Kingdom"
+        "nationality": "United Kingdom",
+        "instagram": ""
       },
       {
         "number": 9,
@@ -62,7 +69,8 @@
         "team": "Jaguar Racing",
         "birthdate": "1994-06-24",
         "age": 30,
-        "nationality": "New Zealand"
+        "nationality": "New Zealand",
+        "instagram": ""
       },
       {
         "number": 11,
@@ -70,7 +78,8 @@
         "team": "Abt Cupra",
         "birthdate": "1984-08-11",
         "age": 40,
-        "nationality": "Brazil"
+        "nationality": "Brazil",
+        "instagram": ""
       },
       {
         "number": 13,
@@ -78,7 +87,8 @@
         "team": "Porsche Team",
         "birthdate": "1991-08-31",
         "age": 33,
-        "nationality": "Portugal"
+        "nationality": "Portugal",
+        "instagram": ""
       },
       {
         "number": 16,
@@ -86,7 +96,8 @@
         "team": "DS Virgin Racing",
         "birthdate": "1988-10-31",
         "age": 35,
-        "nationality": "Switzerland"
+        "nationality": "Switzerland",
+        "instagram": ""
       },
       {
         "number": 17,
@@ -94,7 +105,8 @@
         "team": "Andretti Autosport",
         "birthdate": "1992-07-08",
         "age": 32,
-        "nationality": "France"
+        "nationality": "France",
+        "instagram": ""
       },
       {
         "number": 18,
@@ -102,7 +114,8 @@
         "team": "Maserati Racing",
         "birthdate": "1998-10-01",
         "age": 25,
-        "nationality": "India"
+        "nationality": "India",
+        "instagram": ""
       },
       {
         "number": 21,
@@ -110,7 +123,8 @@
         "team": "Mahindra Racing",
         "birthdate": "1995-02-06",
         "age": 29,
-        "nationality": "Netherlands"
+        "nationality": "Netherlands",
+        "instagram": ""
       },
       {
         "number": 22,
@@ -118,7 +132,8 @@
         "team": "Nissan e.dams",
         "birthdate": "1992-08-10",
         "age": 32,
-        "nationality": "United Kingdom"
+        "nationality": "United Kingdom",
+        "instagram": ""
       },
       {
         "number": 23,
@@ -126,7 +141,8 @@
         "team": "Nissan e.dams",
         "birthdate": "1999-06-28",
         "age": 25,
-        "nationality": "France"
+        "nationality": "France",
+        "instagram": ""
       },
       {
         "number": 25,
@@ -134,7 +150,8 @@
         "team": "DS Penske",
         "birthdate": "1990-04-25",
         "age": 34,
-        "nationality": "France"
+        "nationality": "France",
+        "instagram": ""
       },
       {
         "number": 33,
@@ -142,7 +159,8 @@
         "team": "NIO Formula E Team",
         "birthdate": "1999-06-08",
         "age": 25,
-        "nationality": "United Kingdom"
+        "nationality": "United Kingdom",
+        "instagram": ""
       },
       {
         "number": 37,
@@ -150,7 +168,8 @@
         "team": "Jaguar Racing",
         "birthdate": "1994-08-19",
         "age": 30,
-        "nationality": "New Zealand"
+        "nationality": "New Zealand",
+        "instagram": ""
       },
       {
         "number": 48,
@@ -158,7 +177,8 @@
         "team": "Mahindra Racing",
         "birthdate": "1987-01-12",
         "age": 37,
-        "nationality": "Switzerland"
+        "nationality": "Switzerland",
+        "instagram": ""
       },
       {
         "number": 51,
@@ -166,7 +186,8 @@
         "team": "Abt Cupra",
         "birthdate": "1992-02-25",
         "age": 32,
-        "nationality": "Switzerland"
+        "nationality": "Switzerland",
+        "instagram": ""
       },
       {
         "number": 94,
@@ -174,7 +195,8 @@
         "team": "Porsche Team",
         "birthdate": "1994-10-18",
         "age": 29,
-        "nationality": "Germany"
+        "nationality": "Germany",
+        "instagram": ""
       }
     ]
   }
