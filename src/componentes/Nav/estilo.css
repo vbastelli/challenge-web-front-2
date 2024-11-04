@@ -25,7 +25,7 @@
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
     display: none; /* Initially hidden, shown in mobile */
 }
@@ -115,27 +115,35 @@ ul {
 /* Responsive Styles */
 /* Updated Responsive Styles */
 @media (max-width: 991.98px) {
+    @media (max-width: 991.98px) {
+        .navbar-brand .formula-logo,
+        .navbar-brand .mahindra-logo {
+            width: 100px; /* Adjust this width as needed for mobile */
+            height: auto; /* Maintain aspect ratio */
+        }
+    }
+    
+
     .navbar {
-        overflow: hidden; /* Prevent overflow */
+        overflow: hidden;
     }
 
     .navbar-links {
-        display: none; /* Hide links by default in mobile */
-        flex-direction: column; /* Stack links vertically */
-        width: 100%; /* Full width */
-        position: absolute; /* Make dropdowns position absolute */
-        top: 60px; /* Adjust based on your navbar height */
-        left: 0; /* Align to the left */
-        background-color: #333; /* Match the navbar background */
-        z-index: 1000; /* Ensure it's on top of other content */
-        margin-bottom: 20px; /* Add margin to separate from footer */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        z-index: 1000;
+        margin-bottom: 20px;
     }
 
     .navbar-links.show {
-        display: flex; /* Show links when toggled in mobile */
+        display: flex;
         margin-top: 6%;
     }
-
     .navbar-nav {
         flex-direction: column; /* Stack items in mobile */
         align-items: flex-start; /* Align items to start */
