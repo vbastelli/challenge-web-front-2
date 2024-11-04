@@ -137,3 +137,12 @@
     width: 40px;
     height: 40px;
 }
+@media (max-width: 768px) {
+    .piloto-card {
+        width: 100%;         /* Full width on mobile */
+    }
+
+    .pilotos-filtros {
+        flex-direction: column;  /* Keep filters stacked on mobile */
+    }
+}

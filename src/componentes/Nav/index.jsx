@@ -14,6 +14,10 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false); // Close the menu
+  };
+
   const toggleAccountDropdown = () => {
     setIsAccountDropdownOpen(!isAccountDropdownOpen);
   };
@@ -63,19 +67,19 @@ const Navbar = () => {
         <div className={`navbar-links ${isOpen ? 'show' : ''}`}>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/news">Notícias</Link>
+              <Link className="nav-link" to="/news" onClick={closeMenu}>Notícias</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/tabela">Tabela de Classificação</Link>
+              <Link className="nav-link" to="/tabela" onClick={closeMenu}>Tabela de Classificação</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/pilotos">Pilotos</Link>
+              <Link className="nav-link" to="/pilotos" onClick={closeMenu}>Pilotos</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/quiz">Quiz</Link>
+              <Link className="nav-link" to="/quiz" onClick={closeMenu}>Quiz</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/sobre-nos">Sobre Nós</Link>
+              <Link className="nav-link" to="/sobre-nos" onClick={closeMenu}>Sobre Nós</Link>
             </li>
             <li className="nav-item dropdown" ref={raceDataDropdownRef}>
               <span
@@ -87,10 +91,10 @@ const Navbar = () => {
               </span>
               <ul className={`dropdown-menu ${isRaceDataDropdownOpen ? 'show' : ''}`}>
                 <li>
-                  <Link className="dropdown-item" to="/dados">Dados Clima</Link>
+                  <Link className="dropdown-item" to="/dados" onClick={closeMenu}>Dados Clima</Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/eventos">Eventos</Link>
+                  <Link className="dropdown-item" to="/eventos" onClick={closeMenu}>Eventos</Link>
                 </li>
               </ul>
             </li>
@@ -104,10 +108,10 @@ const Navbar = () => {
               </span>
               <ul className={`dropdown-menu ${isAccountDropdownOpen ? 'show' : ''}`}>
                 <li>
-                  <Link className="dropdown-item" to="/login">Login</Link>
+                  <Link className="dropdown-item" to="/login" onClick={closeMenu}>Login</Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/perfil">Perfil</Link>
+                  <Link className="dropdown-item" to="/perfil" onClick={closeMenu}>Perfil</Link>
                 </li>
               </ul>
             </li>
