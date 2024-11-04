@@ -105,27 +105,53 @@
 }
 
 /* Responsive Styles */
+/* Updated Responsive Styles */
 @media (max-width: 991.98px) {
+    .navbar {
+        overflow: hidden; /* Prevent overflow */
+    }
+
     .navbar-links {
         display: none; /* Hide links by default in mobile */
         flex-direction: column; /* Stack links vertically */
         width: 100%; /* Full width */
+        position: absolute; /* Make dropdowns position absolute */
+        top: 60px; /* Adjust based on your navbar height */
+        left: 0; /* Align to the left */
+        background-color: #333; /* Match the navbar background */
+        z-index: 1000; /* Ensure it's on top of other content */
+        margin-bottom: 20px; /* Add margin to separate from footer */
     }
 
     .navbar-links.show {
         display: flex; /* Show links when toggled in mobile */
+        margin-top: 10%;
     }
 
     .navbar-nav {
         flex-direction: column; /* Stack items in mobile */
         align-items: flex-start; /* Align items to start */
+        width: 100%; /* Ensure nav items take full width */
+        padding: 0; /* Reset padding */
     }
 
     .nav-item {
-        margin: 5px 0; /* Space between items in mobile */
+        width: 100%; /* Make nav items full width */
+        margin: 0; /* Reset margin for full width */
+    }
+
+    .nav-link {
+        display: block; /* Allow nav link to take full width */
+        padding: 10px 15px; /* Add padding */
     }
 
     .navbar-toggler {
         display: block; /* Show toggler only on mobile */
+    }
+    footer {
+        margin-top: 20px; /* Ensure there’s space above the footer */
+    }
+    .dropdown-item {
+    width: 100vh;
     }
 }
