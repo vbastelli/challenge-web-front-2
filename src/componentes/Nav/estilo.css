@@ -1,74 +1,101 @@
 /* Navbar personalizada */
-.custom-navbar {
+.navbar {
     background-color: #333; /* Fundo escuro personalizado */
-    padding: 0px 20px 0px 10px;
+    padding: 10px;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.navbar-toggler {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbar-links {
+    display: none; /* Hide links by default */
+}
+
+.navbar-links.show {
+    display: flex; /* Show links when toggled */
+    flex-direction: column; /* Stack links vertically */
 }
 
 .navbar-nav {
-    margin-left: auto;
-    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-item .nav-link {
+.nav-item {
+    margin: 10px 0; /* Space between items */
+}
+
+.nav-link {
     color: #fff;
-    margin-right: 20px;
+    text-decoration: none;
     font-size: 1.1rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 /* Hover nos links da navbar */
-.navbar-nav .nav-item .nav-link:hover {
+.nav-link:hover {
     color: #007bff;
-    transform: scale(1.1);
 }
 
-/* Hamburguer personalizado (aparece apenas em telas pequenas) */
-.navbar-toggler {
-    border: none;
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none; /* Hide dropdowns by default */
+    position: absolute; /* Position relative to the navbar */
+    background-color: #444; /* Background color for dropdown */
+    border-radius: 5px; /* Round corners */
+    margin-top: 5px; /* Space between link and dropdown */
 }
 
-.navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.5%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+.dropdown-menu.show {
+    display: block; /* Show dropdown when toggled */
 }
 
-.formula-logo {
-    width: 250px; /* Default width for larger screens */
-    transition: transform 0.3s ease, color 0.3s ease;
+.dropdown-item {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Padding for dropdown items */
+    display: block;
 }
 
-.mahindra-logo {
-    width: 180px; /* Default width for larger screens */
-    transition: transform 0.3s ease, color 0.3s ease;
+.dropdown-item:hover {
+    background-color: #007bff; /* Change background on hover */
 }
 
-.formula-logo:hover, .mahindra-logo:hover {
-    transform: scale(1.1);
-}
-
-/* Estilo do menu quando colapsado */
-.navbar-collapse {
-    transition: max-height 0.5s ease-out; /* Tempo e estilo da transição */
-}
-
-/* Estilo do menu quando aberto */
-.navbar-collapse.show {
-    max-height: 500px; /* Ajuste conforme o tamanho necessário para o conteúdo */
-}
-
-/* Media query for mobile responsiveness */
+/* Responsive Styles */
 @media (max-width: 991.98px) {
-    /* Para telas menores, os itens ficam empilhados */
+    .navbar-links {
+        display: flex; /* Show links in mobile */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+    }
+
     .navbar-nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stack items in mobile */
+        align-items: flex-start; /* Align items to start */
     }
 
-    .navbar-nav .nav-item {
-        margin-right: 0;
-        margin-bottom: 10px;
+    .nav-item {
+        margin: 5px 0; /* Space between items in mobile */
     }
 
-    /* Adjust logo sizes for mobile */
     .formula-logo {
         width: 150px; /* Smaller width for mobile */
     }

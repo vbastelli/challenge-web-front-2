@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './estilo.css'; // Caso tenha estilos adicionais
-
+import './estilo.css'; // Additional styles
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +22,7 @@ const Navbar = () => {
     setIsRaceDataDropdownOpen(!isRaceDataDropdownOpen);
   };
 
-  // Hook para fechar o dropdown ao clicar fora
+  // Hook to close the dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
@@ -34,43 +33,30 @@ const Navbar = () => {
       }
     };
 
-    // Adiciona o listener para cliques fora do dropdown
     document.addEventListener('mousedown', handleClickOutside);
     
-    // Limpa o listener ao desmontar o componente
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark custom-navbar">
-      <div className="container-fluid">
-        {/* First Logo */}
+    <nav className="navbar">
+      <div className="navbar-container">
         <Link className="navbar-brand" to="/">
           <img src="formulaelogo.png" alt="Logo" className="formula-logo" />
         </Link>
         
-        {/* Second Logo */}
         <Link className="navbar-brand" to="/">
           <img src="mahindralogo.png" alt="Second Logo" className="mahindra-logo" />
         </Link>
 
-        {/* Botão Hamburguer */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={toggleMenu}
-          aria-controls="navbarNav"
-          aria-expanded={isOpen}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" onClick={toggleMenu}>
+          ☰
         </button>
 
-        {/* Itens do Menu */}
-        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+        <div className={`navbar-links ${isOpen ? 'show' : ''}`}>
+          <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/news">Notícias</Link>
             </li>
@@ -87,15 +73,9 @@ const Navbar = () => {
               <Link className="nav-link" to="/sobre-nos">Sobre Nós</Link>
             </li>
             <li className="nav-item dropdown" ref={raceDataDropdownRef}>
-              <Link
-                className="nav-link dropdown-toggle"
-                to="#"
-                onClick={toggleRaceDataDropdown}
-                role="button"
-                aria-expanded={isRaceDataDropdownOpen}
-              >
+              <span className="nav-link dropdown-toggle" onClick={toggleRaceDataDropdown}>
                 Dados de Corrida
-              </Link>
+              </span>
               <ul className={`dropdown-menu ${isRaceDataDropdownOpen ? 'show' : ''}`}>
                 <li>
                   <Link className="dropdown-item" to="/dados">Dados Clima</Link>
@@ -106,15 +86,9 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="nav-item dropdown" ref={accountDropdownRef}>
-              <Link
-                className="nav-link dropdown-toggle"
-                to="#"
-                onClick={toggleAccountDropdown}
-                role="button"
-                aria-expanded={isAccountDropdownOpen}
-              >
+              <span className="nav-link dropdown-toggle" onClick={toggleAccountDropdown}>
                 Conta
-              </Link>
+              </span>
               <ul className={`dropdown-menu ${isAccountDropdownOpen ? 'show' : ''}`}>
                 <li>
                   <Link className="dropdown-item" to="/login">Login</Link>
