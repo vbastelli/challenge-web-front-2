@@ -13,6 +13,7 @@ import Eventos from './componentes/Eventos/Eventos';
 import Noticias from './componentes/News/index';
 import Dados from './componentes/Dados/Dados';
 import UserProfile from './componentes/UserProfile/UserProfile';
+import './App.css'
 
 function App() {
   return (

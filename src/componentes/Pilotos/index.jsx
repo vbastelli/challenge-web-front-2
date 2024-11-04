@@ -5,6 +5,7 @@ const Pilotos = () => {
   const [filteredDrivers, setFilteredDrivers] = useState([]);
   const [nationalityFilter, setNationalityFilter] = useState('');
   const [teamFilter, setTeamFilter] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); 
   const [favoriteDrivers, setFavoriteDrivers] = useState([]);
 
   const pilotos = [
@@ -45,7 +46,6 @@ const Pilotos = () => {
     setFavoriteDrivers(savedFavorites);
   }, []);
 
-  // Save favorite drivers to localStorage whenever the favoriteDrivers state changes
   useEffect(() => {
     localStorage.setItem('favoriteDrivers', JSON.stringify(favoriteDrivers));
   }, [favoriteDrivers]);
@@ -55,20 +55,19 @@ const Pilotos = () => {
   }, []);
 
   useEffect(() => {
-    // Filter drivers based on nationality and team
     const filtered = pilotos.filter((driver) => 
       (nationalityFilter ? driver.nationality === nationalityFilter : true) &&
-      (teamFilter ? driver.team === teamFilter : true)
+      (teamFilter ? driver.team === teamFilter : true) &&
+      (searchTerm ? driver.nome.toLowerCase().includes(searchTerm.toLowerCase()) : true)
     );
-    
-    // Show favorited drivers first
+
     const sortedDrivers = [
       ...filtered.filter(driver => favoriteDrivers.includes(driver.nome)),
       ...filtered.filter(driver => !favoriteDrivers.includes(driver.nome))
     ];
-    
+
     setFilteredDrivers(sortedDrivers);
-  }, [nationalityFilter, teamFilter, favoriteDrivers]);
+  }, [nationalityFilter, teamFilter, searchTerm, favoriteDrivers]);
 
   const handleNationalityChange = (e) => {
     setNationalityFilter(e.target.value);
@@ -76,6 +75,10 @@ const Pilotos = () => {
 
   const handleTeamChange = (e) => {
     setTeamFilter(e.target.value);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value); // Atualiza o termo de pesquisa
   };
 
   const handleVote = (driverName) => {
@@ -96,6 +99,16 @@ const Pilotos = () => {
   return (
     <div className="pilotos-container">
       <h2 className='pilotos-titulo'>Vote em quem você acha que vai ganhar a próxima corrida:</h2>
+      
+      {/* Campo de pesquisa de nome */}
+      <input 
+        type="text" 
+        placeholder="Pesquisar piloto por nome" 
+        value={searchTerm} 
+        onChange={handleSearchChange} 
+        className="search-bar"
+      />
+      
       <div className="pilotos-filtros">
         <select onChange={handleNationalityChange} value={nationalityFilter}>
           <option value="">All Countries</option>

@@ -14,4 +14,8 @@ html, body {
     overflow-y: auto; /* Adiciona rolagem se o conteúdo for muito longo */
 }
 
-/* Estilos adicionais para Nav e Footer se necessário */
+@media (max-width: 768px) {
+    .content{
+        margin-bottom: -30px;
+    }
+}

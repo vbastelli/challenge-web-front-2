@@ -2,7 +2,7 @@
     height: auto;
     background-color: #222; /* Change the background color if needed */
     color: white; /* Text color */
-    padding: 0px 20px 0px 20px;
+    padding: 10px 20px 0px 20px;
   }
 
 .footer-content {
@@ -87,7 +87,7 @@
 @media (max-width: 768px) {
     
     .footer {
-        padding: 10px; 
+        padding: 5px; 
     }
 
     .footer-content {
@@ -97,11 +97,11 @@
 
     .footer-section {
         flex: 1 1 100%; 
-        margin: 10px 0; 
+        margin: 8px 0; 
     }
 
     .footer-section h4 {
-        font-size: 1.1rem; 
+        font-size: 1rem; 
     }
 
     .footer-section p {
@@ -113,11 +113,11 @@
     }
 
     .social-icons {
-        margin-top: 5px; 
+        margin-top: 0; 
     }
 
     .footer-bottom p{
         font-size: 0.8rem;
-        padding: 5px 0;
+        padding: 0px 0;
     }
 }

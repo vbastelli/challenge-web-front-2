@@ -1,200 +1,176 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
-    font-family: 'Montserrat', sans-serif; /* Consistent font across the site */
-    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
-    height: 100%; /* Garante que a altura do HTML e do body seja 100% */
-    margin: 0; /* Remove margens padrão */
+    height: 100%;
+    background-color: #f1f2f6;
 }
 
 .container {
-    height: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column; /* Define o layout como coluna */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    min-height: 70vh; /* Garante que o container ocupe pelo menos 100% da altura da viewport */
-    padding: 20px; /* Adiciona um pouco de padding */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .user-profile {
-    flex-grow: 1; /* Permite que a seção do perfil do usuário cresça */
     max-width: 600px;
-    width: 100%; /* Garante que o perfil utilize a largura total disponível */
-    margin: 20px auto; /* Centraliza horizontalmente */
-    padding: 30px; /* Mais espaço interno */
-    background-color: #ffffff; /* Fundo branco */
-    border-radius: 12px; /* Cantos arredondados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra suave */
-    transition: box-shadow 0.3s; /* Transição suave ao passar o mouse */
-}
-
-.user-profile:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+    width: 100%;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .profile-title {
-    text-align: center;
-    color: #0056b3; /* Azul escuro */
-    font-size: 28px; /* Título maior */
-    margin-bottom: 25px;
-    font-weight: 700; /* Peso da fonte mais forte */
+    font-size: 26px;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.profile-info {
+.not-logged-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinha os itens ao centro */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.not-logged h1 {
+    font-size: 30px;
+    color: #333;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
-/* Continue com o restante do seu CSS sem alterações */
+.login-button {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+.login-button:hover {
+    background-color: #004094;
+}
+
+/* Profile Section for Logged-in Users */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
 .profile-image {
-    width: 120px; /* Increased profile image size */
-    height: 120px; /* Increased profile image size */
-    border-radius: 50%; /* Circular image */
-    object-fit: cover; /* Cover container without distortion */
-    border: 3px solid #0056b3; /* Blue border around the image */
-    margin-bottom: 15px; /* More space below the image */
-}
-
-.label-container {
-    text-align: center; /* Centraliza o texto dentro do container */
-}
-
-.profile-image-input {
-    display: block; /* Faz o input ocupar a largura do contêiner */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    font-size: 15px;
-    margin-bottom: 7px; /* Espaço entre o input de upload */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0056b3;
+    margin-bottom: 15px;
 }
 
 .custom-upload-label {
-    display: block; /* Faz o label ocupar a largura do contêiner */
-    text-align: center; /* Centraliza o texto */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    margin-bottom: 7px; /* Espaço abaixo do label */
-    color: #666; /* Cor do texto */
+    color: #666;
     font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-.change-photo-text {
-    color: #666; /* Gray text color */
-    font-size: 14px;
-    text-align: center; /* Centered text */
+.user-info p {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
 }
 
 .favorite-drivers {
-    margin-top: 30px; /* More space above favorite drivers section */
-    flex-grow: 1; /* Allows the favorite drivers section to grow */
+    margin-top: 30px;
 }
 
 .drivers-title {
-    font-size: 22px; /* Larger title for favorite drivers */
+    font-size: 20px;
+    color: #333;
     margin-bottom: 15px;
-    color: #333; /* Title text color */
-    text-align: center;
-    font-weight: 600; /* Stronger font weight */
+    font-weight: 600;
 }
 
 .drivers-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Space between cards */
-    justify-content: center; /* Center cards horizontally */
+    gap: 15px;
+    justify-content: center;
 }
 
 .driver-card {
-    background-color: #f2f2f2; /* Light background color */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* More internal space */
-    display: flex;
-    align-items: center;
-    width: 160px; /* Fixed width for cards */
+    width: 160px;
+    padding: 15px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .driver-card:hover {
-    transform: translateY(-5px); /* Slight movement on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .driver-icon {
-    font-size: 35px; /* Larger driver icon size */
-    margin-bottom: 5px; /* Space below icon */
-    color: #0056b3; /* Blue icon color */
+    font-size: 35px;
+    color: #0056b3;
+    margin-bottom: 5px;
 }
 
 .driver-name {
-    font-size: 18px; /* Driver name text size */
-    color: #333; /* Text color */
+    font-size: 16px;
+    color: #333;
 }
 
 .no-drivers {
-    text-align: center;
-    color: #999; /* Gray color */
-    font-style: italic; /* Italic text to indicate no favorites */
+    color: #999;
+    font-style: italic;
 }
-
-.login-button {
-    display: inline-block; /* Muda para inline-block */
-    padding: 12px;
-    background-color: #ff6600; /* Cor de fundo laranja */
-    border: none;
-    border-radius: 8px; /* Bordas arredondadas */
-    color: white; /* Cor do texto branco */
-    font-size: 25px; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
-}
-
-
-
-.not-logged-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    height: 70vh; /* Ocupa toda a altura da janela */
-    background-color: #f9f9f9; /* Cor de fundo */
-    text-align: center; /* Centraliza o texto */
-}
-
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .user-profile {
-        padding: 20px; /* Less padding on smaller screens */
-        max-width: 90%; /* Max width of 90% */
+        padding: 20px;
+        max-width: 90%;
     }
 
     .profile-image {
-        width: 100px; /* Reduced profile image size */
-        height: 100px; /* Reduced profile image size */
+        width: 100px;
+        height: 100px;
     }
 
     .driver-card {
-        width: 140px; /* Reduced card width on smaller screens */
-    }
-
-    .drivers-title {
-        font-size: 20px; /* Smaller title on smaller screens */
+        width: 140px;
     }
 }
 
 @media (max-width: 480px) {
     .profile-title {
-        font-size: 24px; /* Adjusted title size */
+        font-size: 24px;
     }
 
     .driver-name {
-        font-size: 16px; /* Adjusted driver name size */
+        font-size: 14px;
     }
 }
