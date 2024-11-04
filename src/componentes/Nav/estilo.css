@@ -84,6 +84,7 @@
 }
 
 .dropdown-item {
+    list-style-type: none;
     color: white;
     text-decoration: none;
     padding: 10px 15px; /* Padding for dropdown items */
@@ -102,6 +103,13 @@
 
 .navbar-brand .mahindra-logo {
     width: 120px; /* or any other styles you want to apply */
+}
+
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Optional: remove padding */
+    margin: 0; /* Optional: remove margin */
 }
 
 /* Responsive Styles */
@@ -125,7 +133,7 @@
 
     .navbar-links.show {
         display: flex; /* Show links when toggled in mobile */
-        margin-top: 10%;
+        margin-top: 6%;
     }
 
     .navbar-nav {
