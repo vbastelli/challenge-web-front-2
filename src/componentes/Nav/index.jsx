@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './estilo.css'; // Caso tenha estilos adicionais
 
 
