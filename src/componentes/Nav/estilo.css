@@ -82,6 +82,7 @@
 .dropdown-toggle:hover {
     cursor: pointer;
 }
+
 .dropdown-item {
     color: white;
     text-decoration: none;
@@ -101,19 +102,6 @@
 
 .navbar-brand .mahindra-logo {
     width: 120px; /* or any other styles you want to apply */
-}
-
-
-ul {
-    list-style-type: none; /* Remove bullets from unordered lists */
-    padding: 0; /* Optional: Remove padding */
-    margin: 0; /* Optional: Remove margin */
-}
-
-ol {
-    list-style-type: none; /* Remove numbers from ordered lists */
-    padding: 0; /* Optional: Remove padding */
-    margin: 0; /* Optional: Remove margin */
 }
 
 /* Responsive Styles */
