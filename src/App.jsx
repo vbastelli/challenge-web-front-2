@@ -13,7 +13,7 @@ import Eventos from './componentes/Eventos/Eventos';
 import Noticias from './componentes/News/index';
 import Dados from './componentes/Dados/Dados';
 import UserProfile from './componentes/UserProfile/UserProfile';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
