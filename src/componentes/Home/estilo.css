@@ -71,11 +71,13 @@ p {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .home-page{
     margin-bottom: -20px;
-
   }
+}
+
+@media (max-width: 768px) {
   .background-video {
     width: 240vh; /* Fill all horizontal space */
     min-height: 100%; 
