@@ -10,6 +10,11 @@
     justify-content: space-between;
 }
 
+.navbar-brands {
+    display: flex;
+    align-items: center;
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -22,25 +27,29 @@
     color: white;
     font-size: 24px;
     cursor: pointer;
+    display: none; /* Initially hidden, shown in mobile */
 }
 
 .navbar-links {
-    display: none; /* Hide links by default */
+    display: flex; /* Show links in desktop */
 }
 
 .navbar-links.show {
     display: flex; /* Show links when toggled */
-    flex-direction: column; /* Stack links vertically */
+    flex-direction: column; /* Stack links vertically in mobile */
 }
 
 .navbar-nav {
-    list-style: none;
+    list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 0;
+    display: flex; /* Display nav items in a row */
+    align-items: center; /* Center align items vertically */
 }
 
 .nav-item {
-    margin: 10px 0; /* Space between items */
+    position: relative; /* Allow dropdowns to position absolutely */
+    margin: 0 15px; /* Space between items */
 }
 
 .nav-link {
@@ -62,29 +71,61 @@
     background-color: #444; /* Background color for dropdown */
     border-radius: 5px; /* Round corners */
     margin-top: 5px; /* Space between link and dropdown */
+    z-index: 1000; /* Ensure dropdown is above other elements */
+    padding: 0; /* Remove padding */
 }
 
 .dropdown-menu.show {
     display: block; /* Show dropdown when toggled */
 }
 
+.dropdown-toggle:hover {
+    cursor: pointer;
+}
 .dropdown-item {
     color: white;
     text-decoration: none;
     padding: 10px 15px; /* Padding for dropdown items */
     display: block;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
 }
 
 .dropdown-item:hover {
+    cursor: pointer;
     background-color: #007bff; /* Change background on hover */
+}
+
+.navbar-brand .formula-logo {
+    width: 150px; /* or any other styles you want to apply */
+}
+
+.navbar-brand .mahindra-logo {
+    width: 120px; /* or any other styles you want to apply */
+}
+
+
+ul {
+    list-style-type: none; /* Remove bullets from unordered lists */
+    padding: 0; /* Optional: Remove padding */
+    margin: 0; /* Optional: Remove margin */
+}
+
+ol {
+    list-style-type: none; /* Remove numbers from ordered lists */
+    padding: 0; /* Optional: Remove padding */
+    margin: 0; /* Optional: Remove margin */
 }
 
 /* Responsive Styles */
 @media (max-width: 991.98px) {
     .navbar-links {
-        display: flex; /* Show links in mobile */
+        display: none; /* Hide links by default in mobile */
         flex-direction: column; /* Stack links vertically */
         width: 100%; /* Full width */
+    }
+
+    .navbar-links.show {
+        display: flex; /* Show links when toggled in mobile */
     }
 
     .navbar-nav {
@@ -96,11 +137,7 @@
         margin: 5px 0; /* Space between items in mobile */
     }
 
-    .formula-logo {
-        width: 150px; /* Smaller width for mobile */
-    }
-
-    .mahindra-logo {
-        width: 120px; /* Smaller width for mobile */
+    .navbar-toggler {
+        display: block; /* Show toggler only on mobile */
     }
 }
